@@ -9,6 +9,7 @@ public class Utils {
         }
         return ret;
     }
+
     public static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.format("%d, ", arr[i]);
@@ -39,11 +40,12 @@ public class Utils {
         }
         return true;
     }
+
     public static boolean isTangDan(int[] arr) {
         boolean ret = true;
-        for (int i = 0; i < arr.length-1; i++){
-            for(int j= i+1; j<arr.length; j++){
-                if(arr[i] > arr[j]){
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
                     ret = false;
                     break;
                 }
@@ -51,5 +53,28 @@ public class Utils {
         }
 
         return ret;
+    }
+
+    public static boolean isNguyenToArr(int[] arr) {
+        boolean ret = true;
+        for (int n : arr) {
+            if (isNguyenTo(n)) {
+                ret = true;
+            } else {
+                ret = false;
+                break;
+            }
+        }
+        return ret;
+    }
+
+    public static int chia(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 4 == 0 && arr[i] % 5 != 0) {
+                count += 1;
+            }
+        }
+        return count;
     }
 }

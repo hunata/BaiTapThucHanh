@@ -2,29 +2,27 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("n= ");
-//        int n = sc.nextInt();
-//        int[] arr = new int[n];
-//        for (int i = 0; i < n; i++) {
-//            System.out.format("a[%d] = ", i);
-//            arr[i] = sc.nextInt();
-//        }
-            int[] arr = Utils.generateArray(6,1,20);
-            Utils.printArray(arr);
-            int sum = Utils.sumNguyenTo(arr);
-            System.out.format("Tổng các số nguyên tố trong mảng là: %d\n", sum);
-            if (Utils.isTangDan(arr)) {
-                System.out.println("Đây là mảng tăng dần");
-            }
-            else System.out.println("Đây là mảng không tăng dần");
-        }
+        // Thực hành mãng
+
+        int[] arr = Utils.generateArray(6, 1, 20);
+        Utils.printArray(arr);
+
+        // Bài 2b - Mãng có phải toàn số nguyên tố
+        if (Utils.isNguyenToArr(arr)) {
+            System.out.println("Đây là mãng gồm các số nguyên tố");
+        } else System.out.println("Đây là mãng không gồm các số nguyên tố");
+
+        // Bài 2c -  Mảng có phải là số tăng dần
+        if (Utils.isTangDan(arr)) {
+            System.out.println("Đây là mảng tăng dần");
+        } else System.out.println("Đây là mảng không tăng dần");
+
+        // Bài 3a - Có bao nhiêu số chia hết cho 4 nhưng không chia hết cho 5
+        int count = Utils.chia(arr);
+        System.out.format("Có %d số chia hết cho 4 và không chia hết cho 5\n", count);
+
+        //bài 3b - Tổng các số nguyên tố có trong mảng
+        int sum = Utils.sumNguyenTo(arr);
+        System.out.format("Tổng các số nguyên tố trong mảng là: %d\n", sum);
     }
-
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Nhập vào số nguyên: ");
-//        int n = sc.nextInt();
-//        if(Utils.isNguyenTo(n)){
-//            System.out.println("nguyen to");
-//        } else System.out.println(" ko nguyen to");
-
+}
